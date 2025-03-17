@@ -2,6 +2,10 @@
 Simple RAG exercise using ChromaDB, OpenAI API, LangChain, and Docker Compose.
 
 ## 1. Build Docker Images
+It is required to have Docker Desktop already installed in your machine to run those commands.
+
+Also, open the command line in Admin mode.
+
 ```bash
 cd Embedding_microservice/
 docker build -t JuliaWPereira/embedder . # embedding microservice
