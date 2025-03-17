@@ -1,5 +1,6 @@
 import os
 import logging
+import chromadb
 import coloredlogs
 from uuid import uuid4
 from flask import Flask
@@ -49,11 +50,12 @@ async def sync_SFTP_files():
     
     
     embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
-
+    
+    client = chromadb.HttpClient(host='localhost', port=8000)
     vector_store = Chroma(
-        collection_name="example_collection",
+        collection_name="web_data",
         embedding_function=embeddings,
-        persist_directory="./web_db",
+        client=client
     )
         
     uuids = [str(uuid4()) for _ in range(len(docs))]
@@ -63,4 +65,4 @@ async def sync_SFTP_files():
     return {}, 200
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=4017)
+    app.run(host="0.0.0.0", port=5000)

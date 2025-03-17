@@ -1,0 +1,10 @@
+os
+logging
+chromadb
+coloredlogs
+flask
+langchain_chroma
+langchain_openai
+langchain_openai
+langchain_core
+langchain
