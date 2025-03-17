@@ -1,0 +1,9 @@
+os
+logging
+coloredlogs
+uuid
+flask
+langchain
+unstructured
+langchain_openai
+langchain_chroma
