@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "0ab6fc9e-83a3-45e7-8080-f52ff4087061",
+		"name": "RAG",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21994359"
+	},
+	"item": [
+		{
+			"name": "Retriever",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "OpenAIAPIKey",
+						"value": "<OPENAI_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5001/retriever?query=O que é a Hormart?",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"retriever"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "O que é a Hormart?"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
