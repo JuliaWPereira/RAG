@@ -1,0 +1,14 @@
+services:
+  embedder:
+    image: JuliaWPereira/embedder
+    ports:
+      - "5000:5000"
+  retriever:
+    image: JuliaWPereira/retriever
+    ports:
+      - "5001:5001"
+  chroma:
+    image: chromadb/chroma
+    ports:
+      - "8000:8000"
+    

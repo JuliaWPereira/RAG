@@ -1,5 +1,3 @@
-os
-logging
 chromadb
 coloredlogs
 flask

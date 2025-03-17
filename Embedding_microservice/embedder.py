@@ -1,6 +1,7 @@
 import os
 import logging
 import chromadb
+from chromadb.config import Settings
 import coloredlogs
 from uuid import uuid4
 from flask import Flask
@@ -52,7 +53,7 @@ async def sync_SFTP_files():
     
     embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
     
-    client = chromadb.HttpClient(host='localhost', port=8000)
+    client = chromadb.HttpClient(host='chroma', port=8000, settings=Settings(allow_reset=True, anonymized_telemetry=False))
     print(client)
     vector_store = Chroma(
         collection_name="web_data",

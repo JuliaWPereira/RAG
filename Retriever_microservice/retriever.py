@@ -1,6 +1,7 @@
 import os
 import logging
 import chromadb
+from chromadb.config import Settings
 import coloredlogs
 from flask import Flask
 from flask import request
@@ -43,7 +44,7 @@ async def sync_SFTP_files():
     os.environ["OPENAI_API_KEY"] = openai_api_key
     # ------------------------------- Load files -------------------------------
     
-    client = chromadb.HttpClient(host='localhost', port=8000)
+    client = chromadb.HttpClient(host='chroma', port=8000, settings=Settings(allow_reset=True, anonymized_telemetry=False))
     embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
     vector_store = Chroma(
         collection_name="web_data",

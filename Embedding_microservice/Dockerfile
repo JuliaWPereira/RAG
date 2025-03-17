@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.9.13
+FROM python:latest
 
 # Update system dependencies
 RUN apt-get update && apt-get install -y
