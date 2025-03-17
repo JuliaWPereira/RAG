@@ -9,6 +9,7 @@ from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
 from langchain_unstructured import UnstructuredLoader
 
+
 # ------------------------------ Console information ------------------------------
 logger = logging.getLogger(__file__)
 coloredlogs.install(
@@ -52,6 +53,7 @@ async def sync_SFTP_files():
     embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
     
     client = chromadb.HttpClient(host='localhost', port=8000)
+    print(client)
     vector_store = Chroma(
         collection_name="web_data",
         embedding_function=embeddings,
